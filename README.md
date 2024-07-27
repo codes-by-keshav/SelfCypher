@@ -39,14 +39,6 @@ Copy
 
 5. Downloading will start (may take some time in some cases).
 
-## Screenshots
-
-<div style="display: flex; justify-content: center;">
-  <img src="static/images/ss1.png" alt="Screenshot 1" style="width: 300px; height: 900px; margin-right: 10px;">
-  <img src="static/images/ss2.png" alt="Screenshot 2" style="width: 300px; height: 900px; margin-right: 10px;">
-  <img src="static/images/ss3.png" alt="Screenshot 3" style="width: 300px; height: 900px;">
-</div>
-
 ## Disclaimer
 
 SelfCypher is intended for educational purposes only. It should not be used for unauthorized access to accounts or systems. Always respect privacy and adhere to applicable laws and regulations.

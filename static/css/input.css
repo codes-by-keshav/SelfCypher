@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .rotate-360 {
+      transform: rotate(360deg);
+    }
+    .rotate-180 {
+      transform: rotate(180deg);
+    }
+  }
+  
+  .rotate-on-hover img {
+    @apply transition-transform duration-1000 ease-in-out;
+  }
+  
+  .rotate-on-hover img:hover {
+    @apply rotate-360;
+  }
+  .rotate-on-hover-180 img {
+    @apply transition-transform duration-500 ease-in-out;
+  }
+  .rotate-on-hover-180 img:hover {
+    @apply rotate-180;
+  }

@@ -1,0 +1,221 @@
+<!--index.html-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SelfCypher</title>
+    <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logo.png') }}">
+</head>
+
+<body class="bg-yellow-100 font-exo">
+    <div class="container mx-auto px-4 py-8 max-w-md">
+        <div class="flex items-center justify-center mb-8 rotate-on-hover">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="w-[35%] h-auto mr-4">
+            <h1 class="text-7xl font-dancing text-yellow-700 font-extrabold">SelfCypher</h1>
+        </div>
+        <p class="text-center text-lg text-gray-700 mb-8">Enter all the information u have about target in below fields
+            if not then leave blank.</p>
+        <form id="userInfoForm" class="bg-yellow-50 shadow-md rounded-3xl px-8 pt-6 pb-8 mb-4">
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="firstname">
+                    First Name
+                </label>
+                <input
+                    class="shadow appearance-none border rounded-3xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="firstname" type="text" name="firstname" required>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="midname">
+                    Middle Name
+                </label>
+                <input
+                    class="shadow appearance-none border rounded-3xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="midname" type="text" name="midname">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="lastname">
+                    Last Name
+                </label>
+                <input
+                    class="shadow appearance-none border rounded-3xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="lastname" type="text" name="lastname">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="dob">
+                    Date of Birth
+                </label>
+                <input
+                    class="shadow appearance-none border rounded-3xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="dob" type="date" name="dob">
+            </div>
+
+
+
+            <div id="dynamicFieldsContainer">
+                <div class="dynamic-field-group mb-4" data-field-name="phonenum">
+                    <h3 class="text-sm font-bold mb-1">Phone Numbers</h3>
+                    <div class="field-container">
+                        <!-- Fields will be added here dynamically -->
+                    </div>
+                    <button type="button"
+                        class="add-field-btn px-2 rounded-3xl focus:outline-none focus:shadow-outline flex items-center justify-center rotate-on-hover-180">
+                        <img src="{{ url_for('static', filename='images/plus.png') }}" alt="Add" class="w-6 h-6">
+                    </button>
+                </div>
+
+                <div class="dynamic-field-group mb-4" data-field-name="email">
+                    <h3 class="text-sm font-bold mb-1">Email Addresses</h3>
+                    <div class="field-container">
+                        <!-- Fields will be added here dynamically -->
+                    </div>
+                    <button type="button"
+                        class="add-field-btn px-2 rounded-3xl focus:outline-none focus:shadow-outline flex items-center justify-center rotate-on-hover-180">
+                        <img src="{{ url_for('static', filename='images/plus.png') }}" alt="Add" class="w-6 h-6">
+                    </button>
+                </div>
+                <div class="dynamic-field-group mb-4" data-field-name="odates">
+                    <h3 class="text-sm font-bold mb-1">Other Inmportant Dates</h3>
+                    <div class="field-container">
+                        <!-- Fields will be added here dynamically -->
+                    </div>
+                    <button type="button"
+                        class="add-field-btn px-2 rounded-3xl focus:outline-none focus:shadow-outline flex items-center justify-center rotate-on-hover-180">
+                        <img src="{{ url_for('static', filename='images/plus.png') }}" alt="Add" class="w-6 h-6">
+                    </button>
+                </div>
+                <div class="dynamic-field-group mb-4" data-field-name="relname">
+                    <h3 class="text-sm font-bold mb-1">Relatives Name (family, partner, children, pets)</h3>
+                    <div class="field-container">
+                        <!-- Fields will be added here dynamically -->
+                    </div>
+                    <button type="button"
+                        class="add-field-btn px-2 rounded-3xl focus:outline-none focus:shadow-outline flex items-center justify-center rotate-on-hover-180">
+                        <img src="{{ url_for('static', filename='images/plus.png') }}" alt="Add" class="w-6 h-6">
+                    </button>
+                </div>
+                <div class="dynamic-field-group mb-4" data-field-name="favfood">
+                    <h3 class="text-sm font-bold mb-1">Favourite food</h3>
+                    <div class="field-container">
+                        <!-- Fields will be added here dynamically -->
+                    </div>
+                    <button type="button"
+                        class="add-field-btn px-2 rounded-3xl focus:outline-none focus:shadow-outline flex items-center justify-center rotate-on-hover-180">
+                        <img src="{{ url_for('static', filename='images/plus.png') }}" alt="Add" class="w-6 h-6">
+                    </button>
+                </div>
+                <div class="dynamic-field-group mb-4" data-field-name="favloc">
+                    <h3 class="text-sm font-bold mb-1">Favourite Locations</h3>
+                    <div class="field-container">
+                        <!-- Fields will be added here dynamically -->
+                    </div>
+                    <button type="button"
+                        class="add-field-btn px-2 rounded-3xl focus:outline-none focus:shadow-outline flex items-center justify-center rotate-on-hover-180">
+                        <img src="{{ url_for('static', filename='images/plus.png') }}" alt="Add" class="w-6 h-6">
+                    </button>
+                </div>
+                <div class="dynamic-field-group mb-4" data-field-name="extra">
+                    <h3 class="text-sm font-bold mb-1">Extra words (may include favourite color, brand, car, etc.)</h3>
+                    <div class="field-container">
+                        <!-- Fields will be added here dynamically -->
+                    </div>
+                    <button type="button"
+                        class="add-field-btn px-2 rounded-3xl focus:outline-none focus:shadow-outline flex items-center justify-center rotate-on-hover-180">
+                        <img src="{{ url_for('static', filename='images/plus.png') }}" alt="Add" class="w-6 h-6">
+                    </button>
+                </div>
+
+
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="hnum">
+                    House Number
+                </label>
+                <input
+                    class="shadow appearance-none border rounded-3xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="hnum" type="text" name="hnum">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="city">
+                    City/Street
+                </label>
+                <input
+                    class="shadow appearance-none border rounded-3xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="city" type="text" name="city">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="pincode">
+                    Postal Code
+                </label>
+                <input
+                    class="shadow appearance-none border rounded-3xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="pincode" type="number" name="pincode">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="state">
+                    State
+                </label>
+                <input
+                    class="shadow appearance-none border rounded-3xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="state" type="text" name="state">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="country">
+                    Country
+                </label>
+                <input
+                    class="shadow appearance-none border rounded-3xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="country" type="text" name="country">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="company">
+                    Company Name
+                </label>
+                <input
+                    class="shadow appearance-none border rounded-3xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="company" type="text" name="company">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="jobtitle">
+                    Job Title
+                </label>
+                <input
+                    class="shadow appearance-none border rounded-3xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="jobtitle" type="text" name="jobtitle">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="religion">
+                    Religion
+                </label>
+                <input
+                    class="shadow appearance-none border rounded-3xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="religion" type="text" name="religion">
+            </div>
+
+
+    </div>
+    <!-- Add other form fields here, similar to the previous example -->
+    <div class="flex items-center justify-center">
+        <button
+            class="bg-yellow-700 hover:bg-yellow-900 text-white font-bold py-2 px-4 rounded-3xl focus:outline-none focus:shadow-outline"
+            type="submit">
+            Submit & Generate Passwords
+        </button>
+    </div>
+    </form>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

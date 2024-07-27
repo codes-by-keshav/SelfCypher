@@ -2,7 +2,7 @@
 
 SelfCypher is a personalized password list generator designed for cybersecurity awareness, and educational purposes. It generates a list of potential passwords based on user-provided information, demonstrating how personal data can be used to create password guesses.
 
-![SelfCypher Logo](path/to/logo.png)
+![SelfCypher Logo](static/images/logo.png)
 
 ## Features
 

@@ -41,9 +41,11 @@ Copy
 
 ## Screenshots
 
-![screeshot1](static/images/ss1.png)
-![screenshot2](static/images/ss2.png)
-![screenshot3](static/images/ss3.png)
+<div style="display: flex; justify-content: center;">
+  <img src="static/images/ss1.png" alt="Screenshot 1" style="width: 150px; margin-right: 10px;">
+  <img src="static/images/ss2.png" alt="Screenshot 2" style="width: 150px; margin-right: 10px;">
+  <img src="static/images/ss3.png" alt="Screenshot 3" style="width: 150px;">
+</div>
 
 ## Disclaimer
 

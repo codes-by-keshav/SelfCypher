@@ -1,6 +1,6 @@
 # SelfCypher
 
-SelfCypher is a personalized password list generator designed for learning, cybersecurity awareness, and educational purposes. It generates a list of potential passwords based on user-provided information, demonstrating how personal data can be used to create password guesses.
+SelfCypher is a personalized password list generator designed for cybersecurity awareness, and educational purposes. It generates a list of potential passwords based on user-provided information, demonstrating how personal data can be used to create password guesses.
 
 ![SelfCypher Logo](path/to/logo.png)
 
@@ -20,31 +20,22 @@ SelfCypher is a personalized password list generator designed for learning, cybe
 
 ## Installation
 
-1. Clone the repository:
-git clone https://github.com/yourusername/selfcypher.git
-cd selfcypher
-Copy
-2. Install the required Python packages:
-pip install -r requirements.txt
-Copy
-3. Install Node.js packages (for Tailwind CSS):
-npm install
-Copy
-4. Set up Tailwind CSS (if necessary):
-npx tailwindcss -i ./src/input.css -o ./static/css/output.css --watch
-Copy
+1. clone the repository
+2. Go inside the project directory.
+3. Install python dependencies and node packages.
+4. Build CSS by using 'npm run build-css' and keep that running in terminal.
 ## Usage
 
 1. Start the Flask server:
 python selfcypher.py
 Copy
-2. Open a web browser and navigate to `http://localhost:5000`
+2. Open a web browser and navigate to `http://localhost:5000` or the url shown in terminal.
 
 3. Fill in the form with the target information
 
 4. Click "Submit & Generate Passwords" to create the password list
 
-5. Download the generated password list
+5. Downloading will start (may take some time in some cases).
 
 ## Screenshots
 
@@ -60,8 +51,5 @@ Contributions to improve SelfCypher are welcome. Please feel free to submit pull
 
 ## Contact
 
-For any questions or concerns, please email [your email address].
+For any questions or concerns, please email keshavanandverma03@gmail.com.
 
-## Future Plans
-
-- [List any planned features or improvements here]

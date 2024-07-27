@@ -39,7 +39,9 @@ Copy
 
 ## Screenshots
 
-[Include screenshots of the application here]
+![screeshot1](static/images/ss1.png)
+![screenshot2](static/images/ss2.png)
+![screenshot3](static/images/ss3.png)
 
 ## Disclaimer
 

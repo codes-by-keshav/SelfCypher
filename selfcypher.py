@@ -98,11 +98,11 @@ def generate_passwords(data):
         phone_variations.append(phone[-4:])  # Last 4 digits
     
     # Vehicle number variations
-    vehicle_variations = []
-    for vehicle in data.get('vehiclenum', '').split(','):
-        vehicle = vehicle.strip()
-        if vehicle:
-            vehicle_variations.append(vehicle[-4:])  # Last 4 characters
+    # vehicle_variations = []
+    # for vehicle in data.get('vehiclenum', '').split(','):
+    #     vehicle = vehicle.strip()
+    #     if vehicle:
+    #         vehicle_variations.append(vehicle[-4:])  # Last 4 characters
     
     # Email variations
     email_variations = []
@@ -129,11 +129,11 @@ def generate_passwords(data):
                     passwords.add(f"{case}{char}{phone}")
                     passwords.add(f"{phone}{char}{case}")
         
-        for vehicle in vehicle_variations:
-            for char in special_chars:
-                for case in [word.lower(), word.title(), word.upper()]:
-                    passwords.add(f"{case}{char}{vehicle}")
-                    passwords.add(f"{vehicle}{char}{case}")
+        # for vehicle in vehicle_variations:
+        #     for char in special_chars:
+        #         for case in [word.lower(), word.title(), word.upper()]:
+        #             passwords.add(f"{case}{char}{vehicle}")
+        #             passwords.add(f"{vehicle}{char}{case}")
         
         for email_part in email_variations:
             for char in special_chars:

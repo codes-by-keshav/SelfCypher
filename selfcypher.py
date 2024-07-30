@@ -121,13 +121,13 @@ def generate_passwords(data):
             for char in special_chars:
                 for case in [word.lower(), word.title(), word.upper()]:
                     passwords.add(f"{case}{char}{date}")
-                    passwords.add(f"{date}{char}{case}")
+                    #passwords.add(f"{date}{char}{case}")
         
         for phone in phone_variations:
             for char in special_chars:
                 for case in [word.lower(), word.title(), word.upper()]:
                     passwords.add(f"{case}{char}{phone}")
-                    passwords.add(f"{phone}{char}{case}")
+                    #passwords.add(f"{phone}{char}{case}")
         
         # for vehicle in vehicle_variations:
         #     for char in special_chars:
@@ -139,7 +139,7 @@ def generate_passwords(data):
             for char in special_chars:
                 for case in [word.lower(), word.title(), word.upper()]:
                     passwords.add(f"{case}{char}{email_part}")
-                    passwords.add(f"{email_part}{char}{case}")
+                    #passwords.add(f"{email_part}{char}{case}")
 
     for word in all_words:
         for date in dates:
@@ -184,10 +184,10 @@ def generate_passwords(data):
         for word in all_words:
             for seq in itertools.chain(generate_number_sequences(), generate_special_sequences()):
                 batch.add(f"{word}{seq}")
-                batch.add(f"{seq}{word}")
+                #batch.add(f"{seq}{word}")
                 for char in special_chars:
                     batch.add(f"{word}{char}{seq}")
-                    batch.add(f"{seq}{char}{word}")
+                    #batch.add(f"{seq}{char}{word}")
                 
                 if len(batch) >= batch_size:
                     yield batch
@@ -223,10 +223,10 @@ def generate_passwords(data):
                     passwords.add(f"{case}{char}{seq}")
             
         # Prepend numbers/special sequences + special character
-        for char in special_chars:
-            for seq in all_sequences:
-                for case in [word.lower(), word.title(), word.upper()]:
-                    passwords.add(f"{seq}{char}{case}")
+        # for char in special_chars:
+        #     for seq in all_sequences:
+        #         for case in [word.lower(), word.title(), word.upper()]:
+        #             passwords.add(f"{seq}{char}{case}")
 
 
     

@@ -97,6 +97,10 @@ document.addEventListener("DOMContentLoaded", function () {
             userInfo[key] = value;
         }
     });
+
+    const passwordGeneratingMessage = document.getElementById("password-generating-message");
+    passwordGeneratingMessage.classList.remove("hidden");
+
     const response = await fetch("/generate", {
         method: "POST",
         headers: {
@@ -113,6 +117,9 @@ document.addEventListener("DOMContentLoaded", function () {
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
+
+    passwordGeneratingMessage.classList.add("hidden");
+
 });
 
 });

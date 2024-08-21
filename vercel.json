@@ -1,6 +1,11 @@
 {
     "version": 2,
     "builds": [{ "src": "selfcypher.py", "use": "@vercel/python" }],
-    "routes": [{ "src": "/(.*)", "dest": "selfcypher.py" }]
+    "routes": [{ "src": "/(.*)", "dest": "selfcypher.py" }],
+    "functions": {
+    "api/**.py": {
+      "maxRequestSize": "50mb"
+    }
+  }
 
 }

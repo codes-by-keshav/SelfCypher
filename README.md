@@ -20,6 +20,7 @@ SelfCypher is a personalized password list generator designed for cybersecurity 
 - Flask
 - Tailwind CSS
 - JavaScript
+- NodeJS
 
 ## Installation
 

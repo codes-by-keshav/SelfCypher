@@ -12,25 +12,36 @@ def index():
     return render_template('index.html')
 
 @app.route('/generate', methods=['POST'])
-def generate():
-    data = request.json  # Change this to handle JSON data
+#def generate():
+    # data = request.json  # Change this to handle JSON data
 
-    # Generate the content of the text file
+    # # Generate the content of the text file
+    # passwords = generate_passwords(data)
+
+    # # Create the content of the text file
+    # text_content = "\n".join(passwords)
+
+    # # Create an in-memory text stream
+    # text_stream = io.StringIO(text_content)
+
+    # # Use send_file to send the in-memory text stream as a file
+    # return send_file(
+    #     io.BytesIO(text_stream.getvalue().encode()),
+    #     as_attachment=True,
+    #     download_name='generated_passwords.txt',
+    #     mimetype='text/plain'
+    # )
+def generate():
+    data = request.json
     passwords = generate_passwords(data)
 
-    # Create the content of the text file
-    text_content = "\n".join(passwords)
+    def generate_file_content():
+        for password in passwords:
+            yield f"{password}\n"
 
-    # Create an in-memory text stream
-    text_stream = io.StringIO(text_content)
-
-    # Use send_file to send the in-memory text stream as a file
-    return send_file(
-        io.BytesIO(text_stream.getvalue().encode()),
-        as_attachment=True,
-        download_name='generated_passwords.txt',
-        mimetype='text/plain'
-    )
+    response = Response(generate_file_content(), mimetype='text/plain')
+    response.headers['Content-Encoding'] = 'gzip'
+    return response
 
 
 def generate_passwords(data):
